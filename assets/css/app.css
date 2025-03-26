@@ -282,7 +282,39 @@ margin-left: 5px ;
 	font-weight: 800;
 	margin: 5px 0px;
 }
+.sticky-side{
+	position: absolute;
+	top: 0;
+	left: -200px;
+}
+.sticky-side .post-tags, .sticky-side .post-share{
+	font-size: 14px;
+	border-right: 1px solid  #ebebee;
+	padding-right: 8px;
+	cursor: pointer;
+}.share-modal .decs{
+	font-size: 14px;
+	line-height: 20px;
+}
+.share-modal a{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color:#ccc ;
+	color: white;
+	margin: 0px 8px;
+}
+.share-modal input{
+	width: 100%;
+	border: 1px dashed #ccc ;
+	font-size: 14px;
+	color: #666;
+	padding: 10px;
 
+}
 
 @media(max-width:991px){
 	.search-holder, .phone-holder, .cart-btn{

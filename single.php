@@ -46,13 +46,44 @@ get_header();
 
                     </div>
                 </div>
-                <div class="post-content">
+                <div class="post-content position-relative">
+                    <div class="sticky-side">
+                        <div class="post-tags">
+                            <div class="">
+                                <i class="fal fa-tags"></i>
+                                <span>برچسب ها </span>
+                            </div>
+                            <?php echo get_the_tag_list('',',')  ?>
+                        </div>
+                        <div class="post-share master-share-open">
+                            <div class="">
+                                <i class="fal fa-share-nodes"></i>
+                                <span>اشتراک گذاری</span>
+                            </div>
+                        </div>
+                    </div>
                     <?php the_content() ?> 
                 </div>
             <?php endwhile; ?>
         </article>
         </div>
     </div>
+    <div class="master-modal share-modal">
+    <div class="body">
+        <i class="fal fa-xmark x-mark-modal cloes-share-modal"></i>
+        <div>
+            <p class="decs">با استفاده از روش های زیر میتوانید این نوشته را به اشتراک بگذارید</p>
+            <div class="d-flex aligns-center justify-content-center my-4">
+                <a href="https://t.me/share/url?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()); ?>" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()); ?>"  target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+            
+            <input class="short-link" type="text" value="<?Php echo get_bloginfo('url') . '/?p=' . $post->ID ?> ">
+
+        </div>
+    </div>
+</div>
 </div>
 
 <?php

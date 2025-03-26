@@ -15,6 +15,8 @@ function master_enqueue_scripts()
     wp_enqueue_style('master-bootstarp', MASTER_THEMEURL . 'assets/css/bootstrap.min.css');
     wp_enqueue_style('master-fontawesome', MASTER_THEMEURL . 'assets/css/fontawesome.css');
     wp_enqueue_style('master-fontawesome-light', MASTER_THEMEURL . 'assets/css/light.css');
+    wp_enqueue_style('master-fontawesome-brands', MASTER_THEMEURL . 'assets/css/brands.css');
+
     wp_enqueue_style('master-app', MASTER_THEMEURL . 'assets/css/app.css');
     wp_enqueue_style('master-navigation-style', MASTER_THEMEURL . 'assets/css/navigation.css');
 
