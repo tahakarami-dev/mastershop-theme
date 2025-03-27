@@ -174,7 +174,7 @@ if (class_exists('CSF')) {
         'title' => 'رنگ اصلی سایت',
         'output'=>array(
           'color'=> '.phone-holder .desc ,.main-page-wraper .details i,',
-          'background-color'=>'.auth-btn:hover,.header-search-submit,.master-navigation>div>ul>li>a::after,.master-footer-contact .email,.master-footer-title::before,.share-modal a',
+          'background-color'=>'.auth-btn:hover,.header-search-submit,.master-navigation>div>ul>li>a::after,.master-footer-contact .email,.master-footer-title::before,.share-modal a,.comment-form input.submit,.comment-reply-link',
           'border-bottom-color'=> '.master-navigation ul.menu>li ul,ul.menu li.menu-item-has-children.mega-menu>.sub-menu'
         ),
         'output_important'=> true,

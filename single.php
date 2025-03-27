@@ -64,6 +64,19 @@ get_header();
                     </div>
                     <?php the_content() ?> 
                 </div>
+                <?php if(comments_open() || get_comments_number())  :  ?>
+                <div class="comment-post my-5">
+                    <div class="section-title position-relative mb-3 ">
+                        <div class="title">
+                            <div class="d-flex aligns-items-center ">
+                                <i class="fal fa-comment-alt-lines ms-3"></i>
+                                <span>دیدگاه ها</span>
+                            </div>
+                        </div>
+                    </div>
+                    <?php comments_template() ?>
+                </div>
+                <?php endif; ?>
             <?php endwhile; ?>
         </article>
         </div>
