@@ -15,7 +15,8 @@ get_header();
 <div class="main-page-wraper single-post">
     <div class="content-section">
         <div class="container">
-        <article>
+        <article id="post-<?php the_ID() ?>" <?php post_class() ?> >
+
             <?php while (have_posts()) : the_post(); ?>
                 <?php if (has_post_thumbnail()): ?>
                     <div class="post-thumbnail">
@@ -64,6 +65,9 @@ get_header();
                     </div>
                     <?php the_content() ?> 
                 </div>
+
+                <?php get_template_part('/templates/blog/related-post')  ?>
+
                 <?php if(comments_open() || get_comments_number())  :  ?>
                 <div class="comment-post my-5">
                     <div class="section-title position-relative mb-3 ">

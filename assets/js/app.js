@@ -61,6 +61,36 @@ jQuery(document).ready(function($) {
             }
         });
     }
+
+    // owl carousle 
+    jQuery(document).ready(function ($) {
+        var carousel = $('.owl-carousel');
+    
+        // دریافت مقادیر از data-attribute
+        var slider_items = carousel.data('slider-items') || 3;
+        var navigation = carousel.data('navigation') || false;
+        var pagination = carousel.data('pagination') || false;
+        var loop = carousel.data('loop') || false;
+    
+        carousel.owlCarousel({
+            loop: loop,
+            margin: 10,
+            dots: pagination,
+            nav: navigation,
+            rtl: true,
+            navText: [
+                ' <i class="fal fa-angle-right"></i>',
+                ' <i class="fal fa-angle-left"></i>'
+            ],
+            responsive: {
+                0: { items: 1 },
+                400: { items: 1 },
+                600: { items: 2 },
+                1000: { items: slider_items }
+            }
+        });
+    });
+    
     
     
     
