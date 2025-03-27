@@ -31,7 +31,12 @@ get_header();
                     <div class="d-flex align-items-center ms-3">
                         <i class="fal fa-eye">
                         </i>
-                        <span>تعداد بازدید :‌ ۵</span>
+                        <span>تعداد بازدید :‌ 
+                            <?php
+                            global $post ;
+                          echo  get_post_meta($post->ID,'_post_view_count',true);
+                            ?>
+                        </span>
 
                     </div>
                     <div class="d-flex align-items-center ms-3">
