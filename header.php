@@ -119,3 +119,5 @@ $header = master_settings('header-el');
 
         </header>
     <?php endif; ?>
+
+    <?php get_template_part('/templates/page-title')?>

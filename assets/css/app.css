@@ -473,7 +473,12 @@ transition: all 0.3s ease;
 	border-radius: 5px;
 	color: white;
 }
-
+.top-section.page-single{
+	padding: 50px 0 !important;
+}
+.single-page .content-section {
+	margin: unset !important;
+}
 @media(max-width:991px){
 	.search-holder, .phone-holder, .cart-btn{
 		display: none !important;

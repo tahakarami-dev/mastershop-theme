@@ -12,6 +12,8 @@ require_once ( MASTER_THEMEDIR . 'inc/elementor/master-elemntor.php');
 require_once ( MASTER_THEMEDIR . 'inc/master-actions.php');
 require_once ( MASTER_THEMEDIR . 'inc/megamenu/mega-menu.php');
 require_once ( MASTER_THEMEDIR . 'inc/megamenu/mega_menu_custom_walker.php');
+require_once ( MASTER_THEMEDIR . 'inc/master-metaboxes.php');
+
 
 
 

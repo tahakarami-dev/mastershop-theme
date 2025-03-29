@@ -1,4 +1,6 @@
-<?php 
+<?php
+
+defined('ABSPATH') || exit('NO Access');
 
 add_action( 'after_setup_theme', 'master_after_setup_theme');
 

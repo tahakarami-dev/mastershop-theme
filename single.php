@@ -1,16 +1,11 @@
 <?php
 wp_head();
 get_header();
-?>
 
-<div class="top-section">
-    <div class="container d-flex flex-column align-items-center">
-    <div class="breadcrumbs">
-    <?php bcn_display(); ?> 
-    </div>
- <h1 class="main-title mt-4"><?php the_title(); ?></h1>
-</div>
-</div>
+$sticky_sidebar = master_settings('sidebar-blog');
+$share_button = master_settings('social-media-sharing');
+$related_post = master_settings('related-post');
+?>
 
 <div class="main-page-wraper single-post">
     <div class="content-section">
@@ -53,6 +48,7 @@ get_header();
                     </div>
                 </div>
                 <div class="post-content position-relative">
+                    <?php if($sticky_sidebar): ?>
                     <div class="sticky-side">
                         <div class="post-tags">
                             <div class="">
@@ -61,17 +57,22 @@ get_header();
                             </div>
                             <?php echo get_the_tag_list('',',')  ?>
                         </div>
+                        <?php if($share_button) :?>
                         <div class="post-share master-share-open">
                             <div class="">
                                 <i class="fal fa-share-nodes"></i>
                                 <span>اشتراک گذاری</span>
                             </div>
                         </div>
+                        <?php endif; ?>
+
                     </div>
+                    <?php endif; ?>
                     <?php the_content() ?> 
                 </div>
-
+                <?php if($related_post): ?>
                 <?php get_template_part('/templates/blog/related-post')  ?>
+                <?php endif; ?>
 
                 <?php if(comments_open() || get_comments_number())  :  ?>
                 <div class="comment-post my-5">

@@ -173,7 +173,7 @@ if (class_exists('CSF')) {
         'type'  => 'color',
         'title' => 'رنگ اصلی سایت',
         'output'=>array(
-          'color'=> '.phone-holder .desc ,.main-page-wraper .details i,.details a, .vcard a,.logged-in-as a',
+          'color'=> '.phone-holder .desc ,.main-page-wraper .details i,.details a, .vcard a,.logged-in-as a,#reply-title a,.post-tags a',
           'background-color'=>'.auth-btn:hover,.header-search-submit,.master-navigation>div>ul>li>a::after,.master-footer-contact .email,.master-footer-title::before,.share-modal a,.comment-form input.submit,.comment-reply-link,.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span,.owl-nav button:hover,.post-thumb .date',
           'border-bottom-color'=> '.master-navigation ul.menu>li ul,ul.menu li.menu-item-has-children.mega-menu>.sub-menu'
         ),
@@ -185,6 +185,44 @@ if (class_exists('CSF')) {
       
      
       
+    )
+  ));
+
+  CSF::createSection($prefix, array(
+    'title'  => 'بلاگ',
+    'fields' => array(
+
+      array(
+        'id'    => 'sidebar-blog',
+        'type'  => 'switcher',
+        'title' => 'فعال سازی سایدبار چسبان نوشته تکی',
+        'default'=> true
+      ),
+      array(
+        'id'    => 'social-media-sharing',
+        'type'  => 'switcher',
+        'title' => ' اشتراک گذاری شبکه های اجتماعی',
+        'default'=> true
+      ),
+
+      array(
+        'id'    => 'related-post',
+        'type'  => 'switcher',
+        'title' => 'فعال سازی مطالب مرتبط' ,
+        'default'=> true
+      ),
+      array(
+        'id'    => 'count-related-post',
+        'type'  => 'text',
+        'title' => 'تعداد مطالب مرتبط ' ,
+        'default'=> 6,
+        'dependency' => array( 'related-post', '==', 'true' ),
+
+      ),
+      
+      
+      
+   
     )
   ));
 

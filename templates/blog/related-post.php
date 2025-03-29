@@ -1,5 +1,6 @@
 <?php 
 global $post;
+$count_related_post = master_settings('count-related-post');
 
 // بررسی اینکه آیا مقدار ID تنظیم شده است
 if (!isset($post->ID)) {
@@ -8,7 +9,7 @@ if (!isset($post->ID)) {
 
 $categories = wp_get_post_categories($post->ID);
 $args = [
-    'posts_per_page' => 6,
+    'posts_per_page' => $count_related_post,
     'post__not_in'   => [$post->ID],
 ];
 
