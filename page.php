@@ -5,10 +5,11 @@ get_header();
 
 <div class="main-page-wraper single-page">
     <div class="content-section">
+        <div class="container">
         <article id="post-<?php the_ID() ?>" <?php post_class() ?> >
 
             <?php while (have_posts()) : the_post(); ?>
-                <div class="post details d-flex align-items-center justify-content-center mt-3 mb-5">
+                <div class="post details d-flex align-items-center justify-content-center mt-5 mb-5">
                     <div class="d-flex align-items-center ms-3">
                         <i class="fal fa-calendar"></i>
                         <span>تاریخ انتشار : <?php echo get_the_date() ?></span>
@@ -55,6 +56,7 @@ get_header();
                 <?php endif; ?>
             <?php endwhile; ?>
         </article>
+        </div>
     </div>
 </div>
 

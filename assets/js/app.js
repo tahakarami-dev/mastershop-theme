@@ -91,6 +91,24 @@ jQuery(document).ready(function($) {
         });
     });
     
+    $(".master-single-product .slick-carousel").each(function () {
+        let e = $(this);
+    
+        e.slick({
+            arrows: !!e.data("nav"),
+            dots: !!e.data("dots"),
+            autoplay: !!e.data("autoplay"),
+            slidesToShow: e.data("columns"),
+            slidesToScroll: 1,
+            rtl: true,
+            asNavFor: e.data("asnavfor") ? e.data("asnavfor") : "",
+            draggable: true,
+            infinite: true,
+            cssEase: "linear",
+            prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+            nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>'
+        });
+    });
     
     
     

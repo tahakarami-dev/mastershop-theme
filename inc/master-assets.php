@@ -18,6 +18,8 @@ function master_enqueue_scripts()
     wp_enqueue_style('master-fontawesome-brands', MASTER_THEMEURL . 'assets/css/brands.css');
     wp_enqueue_style('master-owl', MASTER_THEMEURL . 'assets/css/owl.carousel.min.css');
     wp_enqueue_style('master-olw-theme', MASTER_THEMEURL . 'assets/css/owl.theme.default.css');
+    wp_enqueue_style('master-slick', MASTER_THEMEURL . 'assets/css/slick.css');
+
 
 
     wp_enqueue_style('master-app', MASTER_THEMEURL . 'assets/css/app.css');
@@ -40,6 +42,8 @@ function master_enqueue_scripts()
     wp_enqueue_script('master-bootsteap-js', MASTER_THEMEURL . 'assets/js/bootstrap.min.js', null,  $theme_version, true);
     wp_enqueue_script('master-app-js', MASTER_THEMEURL . 'assets/js/app.js',null,  $theme_version, true);
     wp_enqueue_script('master-owl-js', MASTER_THEMEURL . 'assets/js/owl.carousel.min.js',null,  $theme_version, true);
+    wp_enqueue_script('master-slick-js', MASTER_THEMEURL . 'assets/js/slick.min.js',null,  $theme_version, true);
+
 
 
 }

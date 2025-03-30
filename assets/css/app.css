@@ -257,6 +257,9 @@ max-width: 900px;
 .main-page-wraper .content-section{
 	margin-top:-140px ;
 }
+.main-page-wraper.single-page .content-section .container{
+	max-width: 1320px ;
+}
 .main-page-wraper .details i{
 font-size: 16px;
 margin-left: 5px ;
@@ -479,6 +482,74 @@ transition: all 0.3s ease;
 .single-page .content-section {
 	margin: unset !important;
 }
+.woo-bread .woocommerce-breadcrumb{
+	margin: 0 !important;
+}
+.master-single-product .master-product-meta{
+display: none !important;
+}
+.master-single-image .images{
+	width: 100% !important;
+	margin-bottom: 0 !important;
+
+}.master-single-image{
+	background-color: #f3f3f3;
+	padding: 14px;
+	border-radius: 30px;
+}
+.master-single-image .slick-slide{
+	background:transparent !important ;
+	border: 0 !important;
+}
+.master-single-image .slick-slide img{
+	border-radius: 30px;
+}
+.master-single-image .image-additional .slick-slide.slick-current img{
+	border: 2px solid #ccc  ;
+}
+.slick-prev, .slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.460);
+    border: none;
+    color: white;
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease; /* انیمیشن نرم */
+}
+
+.slick-prev {
+    left: -30px;
+}
+
+.slick-next {
+    right: -30px;
+}
+
+.slick-prev:hover, .slick-next:hover {
+    background: rgba(0, 0, 0, 0.660);
+}
+
+
+.master-single-info .product_title {
+	font-size: 24px;
+	line-height: 20px;
+	font-weight: 600;
+}
+.master-single-info  .product-sub-title{
+	font-size: 14px;
+	color: #7d7d7d;
+}
+
+
 @media(max-width:991px){
 	.search-holder, .phone-holder, .cart-btn{
 		display: none !important;

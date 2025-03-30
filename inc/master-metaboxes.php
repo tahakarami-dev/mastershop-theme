@@ -23,4 +23,21 @@ function master_cmb2_admin(){
 		'type'       => 'checkbox',
 	
 	) );
+
+	$product_meta = new_cmb2_box( array(
+		'id'            => 'product-metabox',
+		'title'         => __('تنظمیات اضافی محصول ' ),
+		'object_types'  => array( 'product'), 
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true,
+	
+	) );
+	$product_meta->add_field( array(
+		'name'       => __( 'زیر عنوان' ),
+		'desc'       => __('شما می توانید در این بخش عنوان انگلیسی محصول را وارد نمایید '),
+		'id'         => '_master_sub_title',
+		'type'       => 'text',
+	
+	) );
 }

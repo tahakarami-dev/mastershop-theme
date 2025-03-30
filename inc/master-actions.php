@@ -7,6 +7,9 @@ add_action( 'after_setup_theme', 'master_after_setup_theme');
 function master_after_setup_theme(){
 
     add_theme_support('title-tag' );
+    add_theme_support('woocommerce' );
+    remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
+
     register_nav_menus(
         array(
             'main-menu' => 'منو اصلی',
