@@ -12,20 +12,24 @@ if ($attachment_ids) {
 ?>
     <div class="master-product-thumbs">
 
-        <div class="master-product-meta">
+        <div class="master-product-meta-value">
             <ul>
-                <li>
+                <li class="mb-2">
                     <button class="woosc-btn woosc-btn-<?php echo get_the_ID() ?> woosc-btn-has-icon woosc-btn-icon-only" data-id="<?php echo get_the_ID() ?>">
                         <span class="woosc-btn-icon"></span>
                     </button>
                 </li>
-                <li>
+
+                <li class="mb-2">
                     <button class="woosw-btn woosw-btn-<?php echo get_the_ID() ?> woosw-btn-has-icon woosw-btn-icon-only" data-id="<?php echo get_the_ID() ?>">
                         <span class="woosw-btn-icon"></span>
                     </button>
                 </li>
+        
             </ul>
         </div>
+
+    
 
         <div class="image-thumbnail slick-carousel" data-asnavfor=".image-additional" data-columns="1" data-nav="false" ?>
             <?php

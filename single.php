@@ -5,6 +5,8 @@ get_header();
 $sticky_sidebar = master_settings('sidebar-blog');
 $share_button = master_settings('social-media-sharing');
 $related_post = master_settings('related-post');
+$view_count = get_post_meta(get_the_ID(), '_post_view_count', true);
+$view_count = $view_count ? $view_count : 0;
 ?>
 
 <div class="main-page-wraper single-post">
@@ -29,7 +31,7 @@ $related_post = master_settings('related-post');
                         <span>تعداد بازدید :‌ 
                             <?php
                             global $post ;
-                          echo  get_post_meta($post->ID,'_post_view_count',true);
+                          echo $view_count;
                             ?>
                         </span>
 

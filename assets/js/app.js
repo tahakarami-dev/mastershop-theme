@@ -109,6 +109,35 @@ jQuery(document).ready(function($) {
             nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>'
         });
     });
+
+
+      // add to cart btns
+  $(document).on("click", ".plus, .minus", function () {
+    var input = $(this).closest(".quantity").find(".qty"),
+      value = parseFloat(input.val()),
+      max = parseFloat(input.attr("max")),
+      min = parseFloat(input.attr("min")),
+      step = input.attr("step");
+    (value && "" !== value && "NaN" !== value) || (value = 0),
+      ("" === max || "NaN" === max) && (max = ""),
+      ("" === min || "NaN" === min) && (min = 0),
+      ("any" === step ||
+        "" === step ||
+        void 0 === step ||
+        "NaN" === parseFloat(step)) &&
+        (step = 1),
+      $(this).is(".plus")
+        ? input.val(
+            max && (max == value || value > max)
+              ? max
+              : value + parseFloat(step)
+          )
+        : min && (min == value || min > value)
+        ? input.val(min)
+        : value > 0 && input.val(value - parseFloat(step)),
+      input.trigger("change");
+  });
+
     
     
     

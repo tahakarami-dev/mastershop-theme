@@ -56,7 +56,7 @@ if (post_password_required()) {
 					do_action('woocommerce_before_single_product_summary');
 					?>
 				</div>
-				<div class="master-single-info col-12 col-md-8">
+				<div class="master-single-info col-12 col-md-8 ">
 					<?php
 					/**
 					 * Hook: woocommerce_single_product_summary.
@@ -70,6 +70,7 @@ if (post_password_required()) {
 					 * @hooked woocommerce_template_single_sharing - 50
 					 * @hooked WC_Structured_Data::generate_product_data() - 60
 					 */
+					remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_price', 10);
 					do_action('woocommerce_single_product_summary');
 					?>
 				</div>
