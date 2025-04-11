@@ -14,6 +14,8 @@ require_once ( MASTER_THEMEDIR . 'inc/megamenu/mega-menu.php');
 require_once ( MASTER_THEMEDIR . 'inc/megamenu/mega_menu_custom_walker.php');
 require_once ( MASTER_THEMEDIR . 'inc/master-metaboxes.php');
 require_once ( MASTER_THEMEDIR . 'inc/master-woocommerce.php');
+require_once ( MASTER_THEMEDIR . 'inc/master-functions.php');
+
 
 
 
