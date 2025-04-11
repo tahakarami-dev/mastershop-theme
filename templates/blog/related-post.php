@@ -2,7 +2,6 @@
 global $post;
 $count_related_post = master_settings('count-related-post');
 
-// بررسی اینکه آیا مقدار ID تنظیم شده است
 if (!isset($post->ID)) {
     return;
 }
