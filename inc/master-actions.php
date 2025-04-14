@@ -34,3 +34,18 @@ function master_post_count_view() {
     }
 }
 add_action('template_redirect', 'master_post_count_view');
+
+
+
+function master_widgets_sidebar() {
+	register_sidebar( array(
+		'name'          => 'سایدبار بلاگ',
+		'id'            => 'blog-sidebar',
+		'description'   => 'تمامی ویجیت هایی که در این بخش قرار دهید در سایدبار بلاگ نمایش داده خواهد شد',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h3 class="widgettitle">',
+		'after_title'   => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'master_widgets_sidebar' );
