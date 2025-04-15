@@ -62,11 +62,14 @@ class Master_Widget_Cart_Btn extends \Elementor\Widget_Base
     {
       $settings =  $this->get_settings_for_display();
       ?>
-
-<a class="cart-btn ms-3" href="" style="border-radius:<?php echo $settings['border'] ?>px !important ; color:<?php echo $settings['color'] ?>!important; background:<?php echo $settings['back'] ?> !important;">
-                            <i class="fal fa-cart-shopping"></i>
-                        </a>
-
+   <div class="dropdown">
+                            <a data-bs-toggle="dropdown" aria-expanded="false" class="cart-btn ms-3" href="" style="border-radius:<?php echo $settings['border'] ?>px !important ; color:<?php echo $settings['color'] ?>!important; background:<?php echo $settings['back'] ?> !important;">
+                                <i class="fal fa-cart-shopping"></i>
+                            </a>
+                            <div class="dropdown-menu master-cart-drop">
+                                <div class="widget woocommerce widget_shopping_cart"><div class="widget_shopping_cart_content"></div></div>
+                            </div>
+                        </div>
 <?php
 
       

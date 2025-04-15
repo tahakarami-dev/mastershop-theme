@@ -173,10 +173,11 @@ if (class_exists('CSF')) {
         'type'  => 'color',
         'title' => 'رنگ اصلی سایت',
         'output'=>array(
-          'color'=> '.phone-holder .desc ,.main-page-wraper .details i,.details a, .vcard a,.logged-in-as a,#reply-title a,.post-tags a, .master-product-category  a, .variations .reset_variations , .comment-form-rating a , .related .section-title h6  ',
-          'background-color'=>'.auth-btn:hover,.header-search-submit,.master-navigation>div>ul>li>a::after,.master-footer-contact .email,.master-footer-title::before,.share-modal a,.comment-form input.submit,.comment-reply-link,.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span,.owl-nav button:hover,.post-thumb .date , .wc-tabs li.active , .related .product_type_variable , .pagination li span,#searchsubmit',
+          'color'=> '.phone-holder .desc ,.main-page-wraper .details i,.details a, .vcard a,.logged-in-as a,#reply-title a,.post-tags a, .master-product-category  a, .variations .reset_variations , .comment-form-rating a , .related .section-title h6 , .product-name a:hover , .persian-woo-stats .fas ',
+          'background-color'=>'.auth-btn:hover,.header-search-submit,.master-navigation>div>ul>li>a::after,.master-footer-contact .email,.master-footer-title::before,.share-modal a,.comment-form input.submit,.comment-reply-link,.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span,.owl-nav button:hover,.post-thumb .date , .wc-tabs li.active ,  .product_type_variable , .pagination li span,#searchsubmit,.ui-slider-range, .ui-slider-handle, .woocommerce-message a, .checkout-button, .update-cart , .e-apply-coupon, .product-remove a:hover,.button , .custom-woo-account-menu .is-active a',
           'border-bottom-color'=> '.master-navigation ul.menu>li ul,ul.menu li.menu-item-has-children.mega-menu>.sub-menu,',
-          'border-color' => '.master-single-image .image-additional .slick-slide.slick-current img'
+          'border-color' => '.master-single-image .image-additional .slick-slide.slick-current img',
+          'border-bottom-color' => '.custom-auth-tab.active'
         ),
         'output_important'=> true,
         'default' => '#2947cc'

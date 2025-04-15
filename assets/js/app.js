@@ -138,7 +138,50 @@ jQuery(document).ready(function($) {
       input.trigger("change");
   });
 
+  $('.custom-auth-tab').on('click', function() {
+    const tabId = $(this).data('tab');
     
+    // حذف کلاس active از همه تب‌ها و فرم‌ها
+    $('.custom-auth-tab').removeClass('active');
+    $('.custom-auth-form').removeClass('active');
     
+    // افزودن کلاس active به تب و فرم انتخاب شده
+    $(this).addClass('active');
+    $('#custom-' + tabId + '-form').addClass('active');
+});
+
+if ($('#custom-register-form').find('.woocommerce-error').length) {
+    $('.custom-auth-tab[data-tab="register"]').click();
+}
+
+    // ajax search
+
+    let searchTimer;
+
+    $('.header-search-input').on('keyup', function () {
+        clearTimeout(searchTimer);
+        let input = $(this).val();
+    
+        if (input.length >= 2) {
+            searchTimer = setTimeout(function () {
+                $.ajax({
+                    type: "post",
+                    url:  MASTER_DATA.ajax_url,
+                    data: {
+                        action: 'master_action_ajax',
+                        keyword: input
+                    },
+                    dataType: "html",
+                    success: function (data) {
+                        $('.search-result-holder').html(data).show();
+                    }
+                });
+            }, 300); 
+        } else {
+            $('.search-result-holder').hide(); 
+        }
+    });
+
+   
     
 });

@@ -35,7 +35,7 @@ if (post_password_required()) {
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class('', $product); ?>>
 	<div class="master-single-product">
 		<div class="container">
-			<?php
+		<?php
 			/**
 			 * Hook: woocommerce_before_single_product.
 			 *
@@ -45,6 +45,7 @@ if (post_password_required()) {
 
 			?>
 			<div class="row mb-5">
+		
 				<div class="master-single-image col-12 col-md-4">
 					<?php
 					/**
@@ -83,6 +84,7 @@ if (post_password_required()) {
 			 * @hooked woocommerce_upsell_display - 15
 			 * @hooked woocommerce_output_related_products - 20
 			 */
+			remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15 );
 			do_action('woocommerce_after_single_product_summary');
 			?>
 		</div>

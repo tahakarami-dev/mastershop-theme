@@ -23,42 +23,85 @@ get_header('shop');
 ?>
 <div class="master-archive-products">
 	<div class="container">
-		<div class="row">
-			<div class="col-12 col-md-3">
-				sidebar
-			</div>
-			<div class="col-12 col-md-9">
+		<?php if (woocommerce_product_loop()): ?>
 			<div class="row">
-				<?php
-				woocommerce_product_loop_start();
-
-				if (wc_get_loop_prop('total')) {
-					while (have_posts()) {
-						the_post();
-
-						/**
-						 * Hook: woocommerce_shop_loop.
-						 */
-						do_action('woocommerce_shop_loop');
-
-						
-						?>
-						
-						
-								<?php wc_get_template_part('content', 'product'); ?>
-							
-						</div>
-						<?php
-					}
-				}
-
-				woocommerce_product_loop_end();
-				?>
+				<div class="col-12 col-md-3">
+					<?php dynamic_sidebar('shop-sidebar')?>
 				</div>
-				
+				<div class="col-12 col-md-9">
+					<div><?php woocommerce_output_all_notices(); ?></div>
+					<?php
+
+					/**
+					 * Hook: woocommerce_before_shop_loop.
+					 *
+					 * @hooked woocommerce_output_all_notices - 10
+					 * @hooked woocommerce_result_count - 20
+					 * @hooked woocommerce_catalog_ordering - 30
+					 */
+					remove_action('woocommerce_before_shop_loop', 'woocommerce_output_all_notices', 10)
+					?>
+
+					<div class="d-flex align-items-center justify-content-between"><?php do_action('woocommerce_before_shop_loop'); ?></div>
+					<?php
+
+					woocommerce_product_loop_start();
+
+					if (wc_get_loop_prop('total')) {
+						while (have_posts()) {
+							the_post();
+
+							/**
+							 * Hook: woocommerce_shop_loop.
+							 */
+							do_action('woocommerce_shop_loop');
+
+
+					?>
+
+
+							<?php wc_get_template_part('content', 'product'); ?>
+
+					<?php
+						}
+					}
+
+					woocommerce_product_loop_end();
+					?>
+
+					<div>
+						<?php
+						//  * Hook: woocommerce_after_shop_loop.
+						//  *
+						//  * @hooked woocommerce_pagination - 10
+						//  */
+						do_action('woocommerce_after_shop_loop');
+
+						?>
+					</div>
+				</div>
+
 			</div>
-		</div>
+		<?php else: ?>
+			<?php
+			/**
+			 * Hook: woocommerce_no_products_found.
+			 *
+			 * @hooked wc_no_products_found - 10
+			 */
+			do_action('woocommerce_no_products_found');
+			?>
+		<?php endif; ?>
 	</div>
 </div>
+</div>
 <?php
+
+/**
+ * Hook: woocommerce_after_main_content.
+ *
+ * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+ */
+do_action('woocommerce_after_main_content');
+
 get_footer('shop');

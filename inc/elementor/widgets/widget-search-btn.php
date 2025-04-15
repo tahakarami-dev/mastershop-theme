@@ -78,6 +78,17 @@ class Master_Widget_Search_Btn extends \Elementor\Widget_Base
             </form>
         </div>
 
+        <div class="search-holder position-relative me-5 ">
+                            <form action="<?php echo esc_url(home_url('/')) ?>" method="post">
+                                <input  style="height: <?php echo $settings['input-height'] ?> background: <?php echo $settings['input-bg'] ?>; "  placeholder="<?php echo esc_html($settings['placeholder']) ?>" name="s" class="form-control header-search-input" type="text" placeholder="دنبال چی میگردی؟">
+                                <input type="hidden" name="post_type" value="product">
+                                <button style="padding:<?php echo $settings['btn-padding'] ?> ; background: <?php echo $settings['btn-bg'] ?> !important" class="header-search-submit" type="submit"><i class="fal fa-search" class="header-search-submit" type="submit"><i class="fal fa-search"></i></button>
+                            </form>
+                            <div class="search-result-holder">
+                                
+                            </div>
+                        </div>
+
 <?php
 
 

@@ -44,6 +44,10 @@ function master_enqueue_scripts()
     wp_enqueue_script('master-owl-js', MASTER_THEMEURL . 'assets/js/owl.carousel.min.js',null,  $theme_version, true);
     wp_enqueue_script('master-slick-js', MASTER_THEMEURL . 'assets/js/slick.min.js',null,  $theme_version, true);
 
+    wp_localize_script('master-app-js'  , 'MASTER_DATA', [
+        'ajax_url' => admin_url('admin-ajax.php')
+    ] );
+
 
 
 }

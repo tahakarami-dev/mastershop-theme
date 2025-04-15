@@ -20,27 +20,27 @@ $header = master_settings('header-el');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <?php wp_head(); ?>
 </head>
 <?php echo get_template_part('templates/phone-nav') ?>
+
 <body <?php body_class(); ?>>
 
     <?php if ($header_type == 'elementor') : ?>
-    <?php
-        if($header){
+        <?php
+        if ($header) {
             $post = get_post($header);
 
-            if(get_post_status($header) and get_post_type($header ) === 'masterheader' ){
-                setup_postdata($header );
+            if (get_post_status($header) and get_post_type($header) === 'masterheader') {
+                setup_postdata($header);
                 the_content();
             }
-
         }
 
-        wp_reset_postdata( );
-        
-    ?>
+        wp_reset_postdata();
+
+        ?>
     <?php else :  ?>
         <header class="main-header">
             <div class="container">
@@ -52,17 +52,28 @@ $header = master_settings('header-el');
                         </a>
 
                         <div class="search-holder position-relative me-5 ">
-                            <form action="">
-                                <input class="form-control header-search-input" type="text" placeholder="دنبال چی میگردی؟">
+                            <form action="<?php echo esc_url(home_url('/')) ?>" method="post">
+                                <input name="s" class="form-control header-search-input" type="text" placeholder="دنبال چی میگردی؟">
+                                <input type="hidden" name="post_type" value="product">
                                 <button class="header-search-submit" type="submit"><i class="fal fa-search"></i></button>
                             </form>
+                            <div class="search-result-holder">
+                                
+                            </div>
                         </div>
                     </div>
+                    
 
                     <div class="d-flex align-items-center">
-                        <a class="cart-btn ms-3" href="">
-                            <i class="fal fa-cart-shopping"></i>
-                        </a>
+                        <div class="dropdown">
+                            <a data-bs-toggle="dropdown" aria-expanded="false" class="cart-btn ms-3" href="">
+                                <i class="fal fa-cart-shopping"></i>
+                            </a>
+                            <div class="dropdown-menu master-cart-drop">
+                                <div class="widget woocommerce widget_shopping_cart"><div class="widget_shopping_cart_content"></div></div>
+                            </div>
+                        </div>
+
                         <div class="d-flex align-items-center ms-3 phone-holder ">
                             <div class="d-flex flex-column">
                                 <span class="number"><?php echo esc_html($phone_number) ?></span>
@@ -106,9 +117,9 @@ $header = master_settings('header-el');
 
                 <div class="pb-3">
                     <div class="master-navigation">
-                        <?php wp_nav_menu( [
-                            'theme_location'=> 'main-menu',
-                            'walker'=> new master_mega_menu_walker(),
+                        <?php wp_nav_menu([
+                            'theme_location' => 'main-menu',
+                            'walker' => new master_mega_menu_walker(),
                         ]) ?>
                     </div>
                 </div>
@@ -120,4 +131,4 @@ $header = master_settings('header-el');
         </header>
     <?php endif; ?>
 
-    <?php get_template_part('/templates/page-title')?>
+    <?php get_template_part('/templates/page-title') ?>

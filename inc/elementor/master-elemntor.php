@@ -40,6 +40,10 @@ function master_register_new_widgets( $widgets_manager ) {
 	require_once( MASTER_THEMEDIR . 'inc/elementor/widgets/widget-footer-menu.php' );
 	require_once( MASTER_THEMEDIR . 'inc/elementor/widgets/widget-contact.php' );
 	require_once( MASTER_THEMEDIR . 'inc/elementor/widgets/widget-footer-title.php' );
+	require_once( MASTER_THEMEDIR . 'inc/elementor/widgets/widget-slider.php');
+	require_once( MASTER_THEMEDIR . 'inc/elementor/widgets/widget-posts.php');
+
+
 
 
 
@@ -56,6 +60,10 @@ function master_register_new_widgets( $widgets_manager ) {
 	$widgets_manager->register( new \Master_Widget_Footer_Menu() );
 	$widgets_manager->register( new \Master_Widget_Contact() );
 	$widgets_manager->register( new \Master_Widget_Footer_Title() );
+	$widgets_manager->register( new \Master_Widget_Simple_Slider() );
+	$widgets_manager->register( new \Master_Latest_Posts_Widget() );
+
+
 
 
 
